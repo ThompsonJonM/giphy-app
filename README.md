@@ -2,6 +2,12 @@ CHANGELOG
 
 READ FROM BOTTOM TO TOP
 
+20170609 - 1259
+
+INDEX.HTML: Added reset button.
+
+APP.JS: Added reset function.
+
 20170609 - 1250
 
 APP.JS: Got the code to work! Fixed elements within the API which allowed the code to call more than one object when the function executes thanks to a for-loop within the function. Prior to this, I did not realize that the data from the API was organized in an array and, due to this, needed to be ported with "[]".

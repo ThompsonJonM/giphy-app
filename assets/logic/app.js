@@ -82,4 +82,17 @@ $("#addGif").on("click", function(event) {
 
 $(document).on("click", ".topic", displayGifInfo);
 
+//buttons execute
+
 renderButtons();
+
+//reset
+
+$("#resetPage").on("click", function(event){
+	$(document).ready(function() {
+	    $('.resetButton').click(function() {
+	        location.reload();
+	    });
+	});  
+});
+	
