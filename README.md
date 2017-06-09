@@ -1,1 +1,5 @@
-# giphy-app
+CHANGELOG
+
+READ FROM BOTTOM TO TOP
+
+20170609 Created.
