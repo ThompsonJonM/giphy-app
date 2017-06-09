@@ -15,30 +15,54 @@ function displayGifInfo() {
 		//log response during troubleshooting as "undefined" kept returning
 		console.log(response);
 
+		var gifResult = response.data;
+
 		//realized a for loop was needed in order to access all of the objects
 		//within the data array, else the data array would only bring
 		//up one object when called
 		//this literally made me yell with excitement when it worked
-		for (var i = 0; i < response.data.length; i++) {
+		for (var i = 0; i < gifResult.length; i++) {
 
 		//logging the response helped in determining that the data
 		//is an array which has to be pulled via []
 		//have to make sure to log more often
 
 		//retrive the rating data
-		var rating = $("<p>" + response.data[i].rating + "</p>");
+		var rating = $("<p>" + gifResult[i].rating + "</p>");
 
 		//appends the rating data
 		$("#gifView").append("<h4>Rating:</h4>").append(rating);
 
 		//retrieve the gif img data
-		var image = $("<img src=" + response.data[i].images.downsized.url + ">");
+		var image = $("<img src=" + gifResult[i].images.fixed_height_still.url + ">");
+
+		//apparently you can do this with canvas but that's not something
+		//I want to fudge with right now
+		//gif in still state
+		image.attr("data-still", gifResult[i].images.fixed_height_still.url);
+
+		//gif in animated state
+		image.attr("data-animate", gifResult[i].images.fixed_height.url);
 
 		//appends the gif img data
 		$("#gifView").append(image);
 		}
+
+		//on click control for gif animate/still
+		$("img").on("click", function() {
+			var imgState = $(this).attr("data-state");
+
+			if (imgState === "still") {
+				$(this).attr("src", $(this).data("animate"));
+				$(this).attr("data-state", "animate");
+
+			} else {
+				$(this).attr("src", $(this).data("still"));
+				$(this).attr("data-state", "still");
+			}
+		});
 	});
-}
+};
 
 //buttons
 

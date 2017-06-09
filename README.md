@@ -2,6 +2,10 @@ CHANGELOG
 
 READ FROM BOTTOM TO TOP
 
+20170609 - 1533
+
+APP.JS: Added stop/go function for images. Now the gifs load in a still state and do not animate until clicked. This was a bit of a slog.
+
 20170609 - 1259
 
 INDEX.HTML: Added reset button.
