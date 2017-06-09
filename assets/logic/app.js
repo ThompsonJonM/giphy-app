@@ -5,33 +5,39 @@ var topics = ["History", "Rugby", "China", "Snowboarding",
 
 function displayGifInfo() {
 	var gif = $(this).attr("dataName");
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=dc6zaTOxFJmzC";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=10&api_key=dc6zaTOxFJmzC";
 
 	$.ajax({
 		url: queryURL,
 		method: "GET"
 	}).done(function(response) {
 
-		//creates a div to hold the gif info
+		//log response during troubleshooting as "undefined" kept returning
+		console.log(response);
 
-		var gifDiv = $("<div>");
+		//realized a for loop was needed in order to access all of the objects
+		//within the data array, else the data array would only bring
+		//up one object when called
+		//this literally made me yell with excitement when it worked
+		for (var i = 0; i < response.data.length; i++) {
+
+		//logging the response helped in determining that the data
+		//is an array which has to be pulled via []
+		//have to make sure to log more often
 
 		//retrive the rating data
-
-		var rating = $("<p>" + response.rating + "</p>");
-		gifDiv.append(rating);
+		var rating = $("<p>" + response.data[i].rating + "</p>");
 
 		//appends the rating data
+		$("#gifView").append("<h4>Rating:</h4>").append(rating);
 
-		$("#gifView").append(gifDiv);
+		//retrieve the gif img data
+		var image = $("<img src=" + response.data[i].images.downsized.url + ">");
 
-		var image = $("<p>" + response.image + "</p>");
-		gifDiv.append(image);
-
-		$("#gifView").append(gifDiv);
-
+		//appends the gif img data
+		$("#gifView").append(image);
+		}
 	});
-
 }
 
 //buttons
