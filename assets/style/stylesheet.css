@@ -1,1 +1,28 @@
-/*CSS goes here*/
+/*Global IDs*/
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	text-align: center;
+	font-weight: bold;
+	background-color: #eeeeee;
+	height: 125px;
+}
+
+footer {
+	text-align: center;
+	padding: 30px 0 0 0;
+	font-weight: bold;
+	background-color: #eeeeee;
+	height: 125px;
+}
+
+h3 {
+	text-align: center;
+}
+
+div {
+	display: block;
+}
