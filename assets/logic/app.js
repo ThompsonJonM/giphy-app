@@ -27,7 +27,7 @@ function displayGifInfo() {
 		//is an array which has to be pulled via []
 		//have to make sure to log more often
 
-		//retrive the rating data
+		//retrieve the rating data
 		var rating = $("<p>" + gifResult[i].rating + "</p>");
 
 		//appends the rating data
@@ -43,6 +43,9 @@ function displayGifInfo() {
 
 		//gif in animated state
 		image.attr("data-animate", gifResult[i].images.fixed_height.url);
+
+		//img state
+		image.attr("data-state", gifResult[i].images.fixed_height_still.url);
 
 		//appends the gif img data
 		$("#gifView").append(image);
@@ -100,6 +103,8 @@ $("#addGif").on("click", function(event) {
 	topics.push(topic);
 
 	renderButtons();
+
+	$("#formInput").val("");
 });
 
 //event listener

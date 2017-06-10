@@ -2,6 +2,14 @@ CHANGELOG
 
 READ FROM BOTTOM TO TOP
 
+20170610 - 1502
+
+INDEX.HTML: Switched places of the addGif and gifView.
+
+APP.JS: Added value removal to the addgif click control.
+
+STYLESHEET.CSS: Added image styling.
+
 20170609 - 1533
 
 APP.JS: Added stop/go function for images. Now the gifs load in a still state and do not animate until clicked. This was a bit of a slog.
