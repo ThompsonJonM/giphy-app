@@ -14,6 +14,12 @@ CHANGELOG
 
 READ FROM BOTTOM TO TOP
 
+20170611 - 2201
+
+APP.JS: Fixed issue where a blank search could be entered which would result in a number of random gifs populating the gifView div.
+
+KNOWN BUG: Clicking submit without a text entry creates a blank button which will not display any gifs. Troubleshot quite a bit and looked up why this could be happening on google. Could not find anything which definitively solved the issue.
+
 20170611 - 1753
 
 INDEX.HTML: Switched around some bootstrap elements.

@@ -2,16 +2,37 @@
 var topics = ["History", "Rugby", "China", "Snowboarding", 
 	"Archaeology", "Anthropology"];
 
-//function for removal of gifs when next topic is pressed
+//buttons
 
-function removePreviousInfo() {
-	$("#gifView").empty("");
+function renderButtons() {
+
+	//deletion prior addition
+	$("#buttons-view").empty("");
+
+	for (var i = 0; i < topics.length; i++) {
+
+		//button generation
+		var a = $("<button>");
+
+		//add class
+		a.addClass("btn");
+
+		//add attribute
+		a.attr("data-name", topics[i]);
+
+		//add text to the button
+		a.text(topics[i]);
+
+		//append the button to the view div
+		$("#buttons-view").append(a);
+	}
 }
 
 //function for addition of topic from button
 
 function displayGifInfo() {
-	var gif = $(this).attr("dataName");
+	var gif = $(this).attr("data-name");
+
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=10&api_key=dc6zaTOxFJmzC";
 
 	$.ajax({
@@ -81,38 +102,17 @@ function displayGifInfo() {
 			}
 		});
 	});
-};
+}
 
-//buttons
+//function for removal of gifs when next topic is pressed
 
-function renderButtons() {
-
-	//deletion prior addition
-	$("#buttons-view").empty();
-
-	for (var i = 0; i < topics.length; i++) {
-
-		//button generation
-		var a = $("<button>");
-
-		//add class
-		a.addClass("btn");
-
-		//add attribute
-		a.attr("dataName", topics[i]);
-
-		//add text to the button
-		a.text(topics[i]);
-
-		//append the button to the view div
-		$("#buttons-view").append(a);
-	}
+function removePreviousInfo() {
+	$("#gifView").empty("");
 }
 
 //Add button events
 
 $("#addGif").on("click", function(event) {
-	event.preventDefault();
 
 	var topic = $("#formInput").val().trim();
 
@@ -121,6 +121,8 @@ $("#addGif").on("click", function(event) {
 	renderButtons();
 
 	$("#formInput").val("");
+
+	return false;
 });
 
 //event listeners
