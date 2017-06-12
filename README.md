@@ -1,6 +1,26 @@
+HOW TO USE THIS APP
+
+This app was created using jQuery, HTML, and CSS in order to grab 10 gifs from the Giphy API and add them to the website structure. Simply type in a topic and hit submit. This will add a button to the existing topics. 
+
+Click on the newly added button to see the top 10 gifs which the Giphy API is currently showing (the order may change). 
+
+Clicking on a topic button will remove the previous gifs and add 10 new ones from the topic clicked.
+
+Hit the reset button to remove all of the added topics and return to the base layout of the app.
+
+Enjoy!
+
 CHANGELOG
 
 READ FROM BOTTOM TO TOP
+
+20170611 - 1753
+
+INDEX.HTML: Switched around some bootstrap elements.
+
+STYLESHEET.CSS: Added responsiveness and minimal styling.
+
+APP.JS: Added removal for prior info so the page does not load more than 10 gifs at a time. Fixed the placement of the gifs by adding a "col-xs-4" class to the gif. This also helped make the gifs responsive.
 
 20170610 - 1502
 

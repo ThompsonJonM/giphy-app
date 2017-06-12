@@ -24,7 +24,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 myHeader">
-					<h3 id="headerFont">Giftastic!</h3>
+					<h1 id="headerFont">The Giftastic Gif App!</h1>
 				</div>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 					<div class="row pageRow">
 
 						<!-- Buttons at top row -->
-						<div class="col-lg-12">
+						<div class="col-xs-10 col-xs-offset-2 col-sm-12 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-7 col-lg-offset-3">
 							<div id="buttons-view"></div>
 						</div>
 					</div>	
@@ -47,23 +47,26 @@
 					<div class="row pageRow">
 						
 						<!-- Topic entry box -->
-						<div class="col-lg-4 formEntry">
+						<div class="col-xs-4 col-xs-offset-2 col-sm-6 col-md-4 col-md-offset-3 col-lg-6 col-lg-offset-2 formEntry">
 							<form id="gifForm">
 								<label for="topicInput">Add a Topic</label>
 								<input type="text" id="formInput"><br>
+						</div>
 
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 formButtons">
 								<!-- Button triggers new topic to be added -->
-								<input id="addGif" type="submit" value="Submit">
-								<input id="resetPage" type="submit" value="Reset">
+								<input id="addGif" class="btn" type="submit" value="Submit">
+								<input id="resetPage" class="btn" type="submit" value="Reset">
 							</form>
 						</div>
 
-						<!-- Image entry box -->
-						<div class="col-lg-8 imageEntry">
-							<div id="gifView"></div>
-<!-- 							<div id="gifImgView"></div> -->
-						</div>
+					</div>
 
+					<div class="row pageRow">
+						<!-- Image entry box -->
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imageEntry">
+							<ul id="gifView"></ul>
+						</div>
 					</div>
 
 				</div>

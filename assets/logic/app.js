@@ -1,7 +1,14 @@
 //variables
-
 var topics = ["History", "Rugby", "China", "Snowboarding", 
 	"Archaeology", "Anthropology"];
+
+//function for removal of gifs when next topic is pressed
+
+function removePreviousInfo() {
+	$("#gifView").empty("");
+}
+
+//function for addition of topic from button
 
 function displayGifInfo() {
 	var gif = $(this).attr("dataName");
@@ -23,32 +30,41 @@ function displayGifInfo() {
 		//this literally made me yell with excitement when it worked
 		for (var i = 0; i < gifResult.length; i++) {
 
-		//logging the response helped in determining that the data
-		//is an array which has to be pulled via []
-		//have to make sure to log more often
+			var gifCol = $("<div class=col-sm-4>");
 
-		//retrieve the rating data
-		var rating = $("<p>" + gifResult[i].rating + "</p>");
+			//logging the response helped in determining that the data
+			//is an array which has to be pulled via []
+			//have to make sure to log more often
 
-		//appends the rating data
-		$("#gifView").append("<h4>Rating:</h4>").append(rating);
+			//retrieve the rating data
+			var rating = $("<h4> Rating: " + gifResult[i].rating + "</h4>");
 
-		//retrieve the gif img data
-		var image = $("<img src=" + gifResult[i].images.fixed_height_still.url + ">");
+			//appends the rating data
+			gifCol.append(rating);
 
-		//apparently you can do this with canvas but that's not something
-		//I want to fudge with right now
-		//gif in still state
-		image.attr("data-still", gifResult[i].images.fixed_height_still.url);
+			//retrieve the gif img data
+			var image = $("<img>");
 
-		//gif in animated state
-		image.attr("data-animate", gifResult[i].images.fixed_height.url);
+				//apparently you can do this with canvas but that's not something
+				//I want to fudge with right now
 
-		//img state
-		image.attr("data-state", gifResult[i].images.fixed_height_still.url);
+				image.attr("src", gifResult[i].images.fixed_height_still.url);
 
-		//appends the gif img data
-		$("#gifView").append(image);
+				image.addClass("img-fluid");
+
+				//gif in still state
+				image.attr("data-still", gifResult[i].images.fixed_height_still.url);
+
+				//gif in animated state
+				image.attr("data-animate", gifResult[i].images.fixed_height.url);
+
+				//img state
+				image.attr("data-state", gifResult[i].images.fixed_height_still.url);
+
+			//appends the gif img data
+			gifCol.append(image);
+
+			$("#gifView").append(gifCol);
 		}
 
 		//on click control for gif animate/still
@@ -80,7 +96,7 @@ function renderButtons() {
 		var a = $("<button>");
 
 		//add class
-		a.addClass("topic");
+		a.addClass("btn");
 
 		//add attribute
 		a.attr("dataName", topics[i]);
@@ -107,9 +123,14 @@ $("#addGif").on("click", function(event) {
 	$("#formInput").val("");
 });
 
-//event listener
+//event listeners
+//removal of previous topic
 
-$(document).on("click", ".topic", displayGifInfo);
+$(document).on("click", ".btn", removePreviousInfo);
+
+//addition of current topic
+
+$(document).on("click", ".btn", displayGifInfo); 
 
 //buttons execute
 
@@ -124,4 +145,3 @@ $("#resetPage").on("click", function(event){
 	    });
 	});  
 });
-	

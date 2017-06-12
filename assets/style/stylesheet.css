@@ -7,34 +7,114 @@
 header {
 	text-align: center;
 	font-weight: bold;
-	background-color: #eeeeee;
+	background-color: #dddddd;
 	height: 125px;
+}
+
+form {
+	margin: 10px 0 0 0;
+}
+
+h4 {
+	text-align: center;
+}
+
+img {
+	width: 300px;
+	height: 200px;
 }
 
 footer {
 	text-align: center;
 	padding: 30px 0 0 0;
 	font-weight: bold;
-	background-color: #eeeeee;
+	background-color: #dddddd;
 	height: 125px;
-}
-
-div {
-	display: block;
-}
-
-img {
-	width: 300px;
-	height: 250px;
 }
 
 /*Classes*/
 
+.myHeader {
+	padding: 30px 0 15px 0;
+}
 
+.bodyContent {
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+	border-width: 10px;
+}
+
+.pageRow {
+	display: inline;
+}
+
+.btn {
+	margin: 5px 5px 5px 5px;
+}
+
+.img-fluid {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.myFooter {
+	padding: 25px 0 15px 0;
+}
 
 /*Individual IDs*/
 
+#pageContent {
+	background-color: #dddddd;
+}
 
+#addGif {
+	margin-right: 10px;
+}
 
 /*Media Queries*/
 
+@media screen and (max-width: 1600px) {
+	img {
+		width: 500px;
+		height: 300px;
+	}
+}
+
+@media screen and (max-width: 980px) {
+
+	img {
+		width: 200px;
+		height: 200px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+	img {
+		width: 200px;
+		height: 150px;
+	}
+
+}
+
+@media screen and (max-width: 640px) {
+	
+	.topic {
+		margin: 1px 1px 1px 1px;
+	}
+
+	form {
+		margin: 0 0 0 0;
+	}
+
+	img {
+		width: 500px;
+		height: 300px;
+	}
+
+	.col-sm-4 {
+		margin-left: 20px;
+	}
+}
