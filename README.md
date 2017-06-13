@@ -14,6 +14,10 @@ CHANGELOG
 
 READ FROM BOTTOM TO TOP
 
+20170612 - 1902 
+
+APP.JS: Removed empty search ability.
+
 20170611 - 2201
 
 APP.JS: Fixed issue where a blank search could be entered which would result in a number of random gifs populating the gifView div.
