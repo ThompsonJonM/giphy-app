@@ -122,7 +122,9 @@ $("#addGif").on("click", function(event) {
 
 	$("#formInput").val("");
 
-	return false;
+	if (topic !== "") {
+		return false;
+	}
 });
 
 //event listeners
