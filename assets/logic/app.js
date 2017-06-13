@@ -124,7 +124,7 @@ $("#addGif").on("click", function(event) {
 
 	if (topic !== "") {
 		return false;
-	}
+	};
 });
 
 //event listeners
